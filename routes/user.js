@@ -21,7 +21,7 @@ router.get(
   "/login",
   passport.authenticate("google"),
   (req,res)=>{
-    res.redirect(process.env.FRONTEDN_URL);
+    res.redirect(process.env.FRONTEND_URL);
   }
 );
 
