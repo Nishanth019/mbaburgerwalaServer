@@ -19,9 +19,10 @@ router.get(
 
 router.get(
   "/login",
-  passport.authenticate("google", {
-    successRedirect: 'http://localhost:3000',
-  })
+  passport.authenticate("google"),
+  (req,res)=>{
+    res.redirect(process.env.FRONTEDN_URL);
+  }
 );
 
 router.get("/me", isAuthenticated, myProfile);
